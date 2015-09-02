@@ -1,0 +1,8 @@
+# Ignore compiled assests.
+/dist/
+
+# Ignore IDE/JetBrains project files.
+/.idea/
+
+# Ignore libraries.
+/node_modules/
