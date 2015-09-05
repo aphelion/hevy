@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
     uglify = require('gulp-uglify'),
-    gutil = require('gulp-util');
+    gutil = require('gulp-util'),
+    karma = require('karma');
 
 var CacheBuster = require('gulp-cachebust');
 var cachebust = new CacheBuster();
@@ -23,19 +24,26 @@ gulp.task('build-js', ['clean'], function () {
         .pipe(buffer())
         .pipe(cachebust.resources())
         .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(uglify())
+        .pipe(uglify({mangle: false}))
         .on('error', gutil.log)
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('build-css', ['clean'], function() {
+gulp.task('build-css', ['clean'], function () {
     return gulp.src('./app/styles/style.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(cachebust.resources())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/styles'));
+});
+
+gulp.task('test', ['build-js'], function () {
+    new karma.Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }).start();
 });
 
 gulp.task('build', ['clean', 'build-css', 'build-js'], function () {
