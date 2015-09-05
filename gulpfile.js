@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     webserver = require('gulp-webserver'),
+    gls = require('gulp-live-server'),
     del = require('del'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -65,3 +66,10 @@ gulp.task('webserver', ['build'], function () {
 });
 
 gulp.task('dev', ['watch', 'webserver']);
+
+gulp.task('production', ['build'], function () {
+    var port = process.env.PORT || 8000;
+    var server = gls.static('dist', port);
+    server.config.livereload = false;
+    server.start();
+});
