@@ -1,8 +1,0 @@
-test:
-  override:
-    - ./node_modules/.bin/gulp test
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: aphelion-hevy-staging
