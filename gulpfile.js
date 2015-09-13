@@ -47,7 +47,7 @@ gulp.task('test', ['build-js'], function () {
     }).start();
 });
 
-gulp.task('build', ['clean', 'build-css', 'build-js'], function () {
+gulp.task('build', ['build-css', 'build-js'], function () {
     return gulp.src('./app/index.html')
         .pipe(cachebust.references())
         .pipe(gulp.dest('./dist'));
