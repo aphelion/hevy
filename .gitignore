@@ -1,2 +1,5 @@
 # Ignore IDE/JetBrains project files.
 /.idea/
+
+# Ignore build folder.
+/build/
