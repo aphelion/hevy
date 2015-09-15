@@ -1,1 +1,1 @@
-web: dugway server
+web: dugway server -h=0.0.0.0 -p=$PORT
