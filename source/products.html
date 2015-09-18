@@ -3,7 +3,10 @@
 {% get products from products.all %}
 <ul>
     {% for product in products %}
-    <li>{{ product.name }}</li>
+    <li>
+        <div>{{ product.name }}</div>
+        <div><img src="{{ product.image | product_image_url }}"></div>
+    </li>
     {% endfor %}
 </ul>
 {% endget %}
