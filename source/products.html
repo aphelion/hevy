@@ -1,1 +1,9 @@
 <p>PRODUCTS</p>
+
+{% get products from products.all %}
+<ul>
+    {% for product in products %}
+    <li>{{ product.name }}</li>
+    {% endfor %}
+</ul>
+{% endget %}
