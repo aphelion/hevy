@@ -11,17 +11,24 @@ describe 'Products Page', type: :feature do
   end
 
   it 'contains an image for each product' do
-    @content.all('div.row div.col-md-4').each do |li|
-      expect(li).to have_selector('img')
+    @content.all('div.row div[class*=col]').each do |product|
+      expect(product).to have_selector('img')
     end
   end
 
   it 'the image for each product is a valid image' do
-    images = @content.all('div.row div.col-md-4 img').map { |img| img[:src] }
+    images = @content.all('div.row div[class*=col] img').map { |img| img[:src] }
 
     images.each do |link|
       visit link
       expect(page.status_code).to be(200)
+    end
+
+  end
+
+  it 'links to each product' do
+    @content.all('div.row div[class*=col]').each do |product|
+      expect(product).to have_selector('a[href]')
     end
   end
 end
