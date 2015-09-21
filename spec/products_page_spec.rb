@@ -4,19 +4,20 @@ describe 'Products Page', type: :feature do
     @content = find('#content')
   end
 
-  it 'lists all the products' do
-    expect(@content.find('ul')).to have_selector('li', count: 7)
+  it 'lists all 7 products in 3 rows' do
+    expect(@content).to have_selector('div.row', count: 3)
+    expect(@content).to have_selector('div.row div[class*=col]', count: 7)
     expect(@content).to have_content 'DIY or DIE Hoodie'
   end
 
   it 'contains an image for each product' do
-    @content.all('ul li').each do |li|
+    @content.all('div.row div.col-md-4').each do |li|
       expect(li).to have_selector('img')
     end
   end
 
-  it 'contains a valid image for each product' do
-    images = @content.all('ul li img').map { |img| img[:src] }
+  it 'the image for each product is a valid image' do
+    images = @content.all('div.row div.col-md-4 img').map { |img| img[:src] }
 
     images.each do |link|
       visit link
