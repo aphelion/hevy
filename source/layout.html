@@ -12,9 +12,9 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/">HOME</a></li>
-                <li><a href="/products">PRODUCTS</a></li>
-                <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> ({{ cart.item_count }})</a></li>
+                <li{% if page.url == '/' %} class="active"{% endif %}><a href="/">HOME</a></li>
+                <li{% if page.url == '/products' %} class="active"{% endif %}><a href="/products">PRODUCTS</a></li>
+                <li{% if page.url == '/cart' %} class="active"{% endif %}><a href="/cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> ({{ cart.item_count }})</a></li>
             </ul>
         </div>
     </div>
