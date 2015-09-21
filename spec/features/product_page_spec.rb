@@ -13,4 +13,8 @@ describe 'Product Page', type: :feature do
     visit @content.find('img')[:src]
     expect(page.status_code).to be(200)
   end
+
+  it 'displays the product description' do
+    expect(@content).to have_content('Lorem ipsum dolor sit amet')
+  end
 end
