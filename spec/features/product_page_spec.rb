@@ -17,4 +17,8 @@ describe 'Product Page', type: :feature do
   it 'displays the product description' do
     expect(@content).to have_content('Lorem ipsum dolor sit amet')
   end
+
+  it 'offers the product options in a select element' do
+    expect(@content).to have_select('product-options', with_options: ['Small', 'Medium', 'Large', 'X-Large - $59.99'])
+  end
 end

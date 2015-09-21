@@ -8,5 +8,11 @@
         {% if product.description != blank %}
         {{ product.description | paragraphs }}
         {% endif %}
+        <form>
+            <div class="form-group">
+                <label for="product-options">Product Options</label>
+                {{ product.options_in_stock | options_select:, 'product-options', 'form-control' }}
+            </div>
+        </form>
     </div>
 </div>

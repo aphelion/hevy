@@ -8,5 +8,7 @@ describe 'a user visiting the site', type: :feature do
 
       click_on 'DIY or DIE Hoodie'
       expect(page).to have_content('DIY or DIE Hoodie')
+
+      select('Medium', from: 'product-options')
     end
 end
