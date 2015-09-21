@@ -12,7 +12,7 @@ describe 'Site Navigation', type: :feature do
 
   describe 'the PRODUCTS link' do
     it 'takes the customer to the products page' do
-      find_link('PRODUCTS').click
+      click_link('PRODUCTS')
       expect(@content).to have_content 'PRODUCTS'
       expect(@content).not_to have_content 'HOME'
     end
@@ -20,7 +20,7 @@ describe 'Site Navigation', type: :feature do
 
   describe 'the cart link' do
     it 'takes the customer to the cart page' do
-      find('.glyphicon-shopping-cart').click
+      find('a[href="/cart"]').click
       expect(@content).to have_content 'CART'
       expect(@content).not_to have_content 'HOME'
     end
@@ -28,7 +28,7 @@ describe 'Site Navigation', type: :feature do
 
   describe 'the HOME link' do
     it 'takes the customer to the home page' do
-      find_link('PRODUCTS').click
+      click_link('PRODUCTS')
       find_link('HOME').click
       expect(@content).to have_content 'HOME'
       expect(@content).not_to have_content 'PRODUCTS'
