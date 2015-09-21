@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>HEVY</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ theme | theme_css_url }}">
     {{ head_content }}
 </head>
 <body>
@@ -13,6 +14,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/">HOME</a></li>
                 <li><a href="/products">PRODUCTS</a></li>
+                <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> ({{ cart.item_count }})</a></li>
             </ul>
         </div>
     </div>

@@ -18,6 +18,14 @@ describe 'Site Navigation', type: :feature do
     end
   end
 
+  describe 'the cart link' do
+    it 'takes the customer to the cart page' do
+      find('.glyphicon-shopping-cart').click
+      expect(@content).to have_content 'CART'
+      expect(@content).not_to have_content 'HOME'
+    end
+  end
+
   describe 'the HOME link' do
     it 'takes the customer to the home page' do
       find_link('PRODUCTS').click
