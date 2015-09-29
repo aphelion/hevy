@@ -1,0 +1,61 @@
+@import "hevy-bootstrap-overrides";
+@import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/variables";
+
+$footer-height: 25vh;
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+#lookbook-container {
+  background-color: $navbar-inverse-bg;
+  @include calc(height, "100vh - #{$navbar-height} - #{$navbar-margin-bottom} - #{$footer-height}");
+  position: relative;
+
+  #lookbook-spinner {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vh;
+  }
+
+  #lookbook {
+    display: none;
+  }
+}
+
+#footer {
+  #footer-bar {
+    height: $footer-height;
+    background-color: black;
+    position: relative;
+
+    img#footer-logo {
+      position: absolute;
+      bottom: 0;
+
+      height: $footer-height * 4/3;
+
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      z-index: 3;
+
+      -webkit-filter: none;
+      filter: none;
+      &:hover {
+        -webkit-filter: drop-shadow(0 0 1em #999);
+        filter: drop-shadow(0 0 1em #999);
+      }
+
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+  }
+}

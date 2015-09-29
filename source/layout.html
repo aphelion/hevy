@@ -2,15 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>HEVY</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ theme | theme_css_url }}">
     {{ head_content }}
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hevy-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--<a class="navbar-brand" href="#">HEVY</a>-->
+            {% if page.url != '/' %}
+            <a href="/"><img id="navbar-logo" src="{{ 'hevy-main.svg' | theme_image_url }}"/></a>
+            {% endif %}
+        </div>
+        <div class="collapse navbar-collapse" id="hevy-navbar">
             <ul class="nav navbar-nav navbar-right">
                 <li{% if page.url == '/' %} class="active"{% endif %}><a href="/">HOME</a></li>
                 <li{% if page.url == '/products' %} class="active"{% endif %}><a href="/products">PRODUCTS</a></li>
@@ -20,11 +32,10 @@
     </div>
 </nav>
 
-<div id="content" class="container">
+<div id="content">
 {{ page_content }}
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="{{ theme | theme_js_url }}"></script>
 </body>
 </html>

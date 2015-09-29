@@ -7,4 +7,4 @@ group :development, :test do
   gem 'capybara-webkit', '~> 1.7.0'
 end
 
-gem 'dugway', '~>0.10.0'
+gem 'dugway', :git => 'git://github.com/aphelion/dugway.git'

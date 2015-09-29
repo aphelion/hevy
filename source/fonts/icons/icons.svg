@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2015-9-28: Created with FontForge (http://fontforge.org)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20150828 at Mon Sep 28 03:08:11 2015
+ By Leonhardt Koepsell
+Copyright (c) 2015, Leonhardt Koepsell
+</metadata>
+<defs>
+<font id="icons" horiz-adv-x="200" >
+  <font-face 
+    font-family="icons"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="0 91.9619 512 292.038"
+    underline-thickness="25.6"
+    underline-position="-51.2"
+    unicode-range="U+0020-F102"
+  />
+    <missing-glyph />
+    <glyph glyph-name="space" unicode=" " 
+ />
+    <glyph glyph-name="uniF102" unicode="&#xf102;" horiz-adv-x="512" 
+d="M0 107.984v161.652h48.7021v-161.652h-48.7021zM403.342 209.161v82.877h48.7021v-193.654h-48.7021v82.8975h-294.758v-89.3193h-48.7236v193.676h48.7236v-76.4766h294.758zM463.266 114.396v161.631h48.7344v-161.631h-48.7344z" />
+  </font>
+</defs></svg>

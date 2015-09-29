@@ -1,5 +1,7 @@
 # Ignore IDE/JetBrains project files.
 /.idea/
 
-# Ignore build folder.
+# Ignore build folders and files.
 /build/
+/.sass-cache/
+.fontcustom-manifest.json

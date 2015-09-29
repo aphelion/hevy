@@ -1,0 +1,26 @@
+@import "hevy-bootstrap-overrides";
+@import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/variables";
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+body {
+  background-color: black;
+}
+
+#content {
+  background-color: white;
+  @include calc(min-height, "100vh - #{$navbar-height} - #{$navbar-margin-bottom}");
+}
+
+$navbar-logo-padding: $navbar-height / 6;
+
+#navbar-logo {
+  position: absolute;
+  top: $navbar-logo-padding;
+  left: $navbar-logo-padding;
+  height: ($navbar-height - $navbar-logo-padding) * 4/3;
+  z-index: 1;
+}

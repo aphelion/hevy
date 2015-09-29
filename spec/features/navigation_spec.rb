@@ -30,7 +30,7 @@ describe 'Site Navigation', type: :feature do
     it 'takes the customer to the home page' do
       click_link('PRODUCTS')
       find_link('HOME').click
-      expect(@content).to have_content 'HOME'
+      expect(@content).to have_selector '#lookbook'
       expect(@content).not_to have_content 'PRODUCTS'
     end
   end
