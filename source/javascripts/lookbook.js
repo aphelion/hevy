@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var minDelay = 500;
+    var minDelay = 1500;
     var start = new Date();
     var lookbook = $('#lookbook');
     if(lookbook.length) {
