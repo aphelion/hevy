@@ -28,14 +28,14 @@ $(document).ready(function () {
             pagination: false
         });
 
-        //document.ontouchmove = function (e) {
-        //    e.preventDefault();
-        //};
-        //lookbook.hammer().on('swipeleft', function () {
-        //    $(this).superslides('animate', 'next');
-        //});
-        //lookbook.hammer().on('swiperight', function () {
-        //    $(this).superslides('animate', 'prev');
-        //});
+        lookbook.hammer().on('swipeleft', function () {
+            $(this).superslides('animate', 'next');
+            $(this).superslides('stop');
+        });
+
+        lookbook.hammer().on('swiperight', function () {
+            $(this).superslides('animate', 'prev');
+            $(this).superslides('stop');
+        });
     }
 });
