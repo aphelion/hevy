@@ -34,10 +34,12 @@ $footer-height: 25vh;
     position: relative;
 
     img#footer-logo {
-      position: absolute;
-      bottom: 0;
+      $shadowWidth: 0.5em;
 
-      height: $footer-height * 4/3;
+      position: absolute;
+      bottom: $shadowWidth;
+
+      @include calc(height, "(#{$footer-height} - #{$shadowWidth}) * 4/3");
 
       left: 50%;
       transform: translate(-50%, 0);
@@ -47,8 +49,8 @@ $footer-height: 25vh;
       -webkit-filter: none;
       filter: none;
       &:hover {
-        -webkit-filter: drop-shadow(0 0 1em #999);
-        filter: drop-shadow(0 0 1em #999);
+        -webkit-filter: drop-shadow(0 0 $shadowWidth #999);
+        filter: drop-shadow(0 0 $shadowWidth #999);
       }
 
       -webkit-transition: all 0.5s;
