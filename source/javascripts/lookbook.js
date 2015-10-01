@@ -1,21 +1,30 @@
 $(document).ready(function () {
-    var minDelay = 1500;
+    var spinnerFadeOutTime = 500;
+    var minSpinnerTime = 1500;
+    var lookbookFadeInTime = 1000;
+
     var start = new Date();
     var lookbook = $('#lookbook');
+
+    function setManualMode(lookbook) {
+        lookbook.superslides('stop');
+        lookbook.data('superslides').animation = lookbook.data('superslides').fx['slide'];
+    }
+
     if(lookbook.length) {
         $(document).on('init.slides', function () {
             var end = new Date();
             var timeInMilliseconds = end - start;
 
             function startSlideshow() {
-                $('#lookbook-spinner').fadeOut(500, function () {
+                $('#lookbook-spinner').fadeOut(spinnerFadeOutTime, function () {
                     $(this).remove();
-                    $('#lookbook').fadeIn(1000);
+                    lookbook.fadeIn(lookbookFadeInTime);
                 });
             }
 
-            if (timeInMilliseconds  < minDelay) {
-                setTimeout(function() { startSlideshow(); }, minDelay - timeInMilliseconds);
+            if (timeInMilliseconds  < minSpinnerTime) {
+                setTimeout(function() { startSlideshow(); }, minSpinnerTime - timeInMilliseconds);
             } else {
                 startSlideshow();
             }
@@ -29,13 +38,13 @@ $(document).ready(function () {
         });
 
         lookbook.hammer().on('swipeleft', function () {
+            setManualMode($(this));
             $(this).superslides('animate', 'next');
-            $(this).superslides('stop');
         });
 
         lookbook.hammer().on('swiperight', function () {
+            setManualMode($(this));
             $(this).superslides('animate', 'prev');
-            $(this).superslides('stop');
         });
     }
 });
