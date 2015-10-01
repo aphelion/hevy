@@ -26,7 +26,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li{% if page.url == '/' %} class="active"{% endif %}><a href="/">HOME</a></li>
                 <li{% if page.url == '/products' %} class="active"{% endif %}><a href="/products">PRODUCTS</a></li>
-                <li{% if page.url == '/cart' %} class="active"{% endif %}><a href="/cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> ({{ cart.item_count }})</a></li>
+                <li{% if page.url == '/cart' %} class="active"{% endif %}><a href="/cart">CART <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> {{ cart.item_count }}</a></li>
             </ul>
         </div>
     </div>
