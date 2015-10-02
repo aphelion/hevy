@@ -1,0 +1,37 @@
+@import "hevy-bootstrap-overrides";
+@import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/variables";
+
+$navbar-logo-padding: $navbar-height / 6;
+
+#navbar-logo {
+  position: absolute;
+  top: $navbar-logo-padding;
+  left: $navbar-logo-padding;
+  height: ($navbar-height - $navbar-logo-padding) * 4/3;
+  z-index: 1;
+}
+
+.navbar {
+  .icon-social {
+    line-height: $navbar-height;
+    font-size: $navbar-height / 2;
+    color: $navbar-inverse-color;
+  }
+
+  a .icon-social {
+    color: $navbar-inverse-link-color;
+    &:hover,
+    &:focus {
+      color: $navbar-inverse-link-hover-color;
+      background-color: $navbar-inverse-link-hover-bg;
+    }
+  }
+
+  a, .icon-social {
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    -o-transition: color 0.5s;
+    transition: color 0.5s;
+  }
+}

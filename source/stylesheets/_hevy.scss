@@ -14,30 +14,3 @@ body {
   background-color: white;
   @include calc(min-height, "100vh - #{$navbar-height} - #{$navbar-margin-bottom}");
 }
-
-$navbar-logo-padding: $navbar-height / 6;
-
-#navbar-logo {
-  position: absolute;
-  top: $navbar-logo-padding;
-  left: $navbar-logo-padding;
-  height: ($navbar-height - $navbar-logo-padding) * 4/3;
-  z-index: 1;
-}
-
-.navbar-header {
-  .icon-social {
-    line-height: $navbar-height;
-    font-size: $navbar-height / 2;
-    color: $navbar-inverse-color;
-  }
-
-  a .icon-social {
-    color: $navbar-inverse-link-color;
-    &:hover,
-    &:focus {
-      color: $navbar-inverse-link-hover-color;
-      background-color: $navbar-inverse-link-hover-bg;
-    }
-  }
-}
