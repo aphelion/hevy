@@ -32,6 +32,14 @@ describe 'Site Navigation', type: :feature do
     end
   end
 
+  describe 'the ABOUT link' do
+    it 'takes the customer to the about page' do
+      click_link('ABOUT')
+      expect(@content).to have_content 'ABOUT'
+      expect(@content).not_to have_content 'HOME'
+    end
+  end
+
   describe 'the cart link' do
     it 'takes the customer to the cart page' do
       find('a[href="/cart"]').click
