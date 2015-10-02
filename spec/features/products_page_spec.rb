@@ -19,9 +19,8 @@ describe 'Products Page', type: :feature do
   it 'the image displayed for each product is a valid image' do
     images = @content.all('div.row div[class*=col] img').map { |img| img[:src] }
 
-    images.each do |link|
-      visit link
-      expect(page.status_code).to be(200)
+    images.each do |src|
+      expect(src).to be_url
     end
 
   end

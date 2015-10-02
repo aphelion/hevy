@@ -24,3 +24,20 @@ $navbar-logo-padding: $navbar-height / 6;
   height: ($navbar-height - $navbar-logo-padding) * 4/3;
   z-index: 1;
 }
+
+.navbar-header {
+  .icon-social {
+    line-height: $navbar-height;
+    font-size: $navbar-height / 2;
+    color: $navbar-inverse-color;
+  }
+
+  a .icon-social {
+    color: $navbar-inverse-link-color;
+    &:hover,
+    &:focus {
+      color: $navbar-inverse-link-hover-color;
+      background-color: $navbar-inverse-link-hover-bg;
+    }
+  }
+}

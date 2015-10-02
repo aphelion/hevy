@@ -10,6 +10,20 @@ describe 'Site Navigation', type: :feature do
     end
   end
 
+  describe 'the related sites icon links' do
+    it 'Aphelion icon goes to the Aphelion homepage' do
+      click_link_expect_new_window_with_url('.icon-hex-aphelion', 'aphelion.io')
+    end
+
+    it 'Instagram icon goes to the Instagram page' do
+      click_link_expect_new_window_with_url('.icon-hex-instagram', 'instagram.com')
+    end
+
+    it 'Facebook icon goes to the Facebook page' do
+      click_link_expect_new_window_with_url('.icon-hex-facebook', 'facebook.com')
+    end
+  end
+
   describe 'the PRODUCTS link' do
     it 'takes the customer to the products page' do
       click_link('PRODUCTS')
@@ -33,5 +47,16 @@ describe 'Site Navigation', type: :feature do
       expect(@content).to have_selector '#lookbook'
       expect(@content).not_to have_content 'PRODUCTS'
     end
+  end
+end
+
+def click_link_expect_new_window_with_url(link_selector, url_include)
+  new_window = window_opened_by { find(link_selector).click }
+  begin
+    within_window new_window do
+      expect(current_url).to include(url_include)
+    end
+  ensure
+    new_window.close
   end
 end

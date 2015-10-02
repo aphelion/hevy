@@ -10,8 +10,7 @@ describe 'Product Page', type: :feature do
 
   it 'displays the primary product image' do
     expect(@content).to have_selector('img[src]')
-    visit @content.find('img')[:src]
-    expect(page.status_code).to be(200)
+    expect(@content.find('img')[:src]).to be_url
   end
 
   it 'displays the product description' do
