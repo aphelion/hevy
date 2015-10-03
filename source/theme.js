@@ -4,3 +4,4 @@
 //= require vendor/bootstrap-sass-3.3.5/assets/javascripts/bootstrap-sprockets
 //= require vendor/superslides-0.6.2/jquery.superslides
 //= require javascripts/lookbook
+//= require javascripts/products

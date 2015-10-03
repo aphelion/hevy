@@ -1,0 +1,37 @@
+@import "hevy-colors";
+@import "hevy-bootstrap-overrides";
+@import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/variables";
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+}
+
+.products-grid {
+  a.product {
+    color: black;
+    &:visited { color: black; }
+    &:hover { color: $hevy-burgundy; }
+    &:active { color: $hevy-burgundy; }
+
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+
+    .product-image {
+      @include aspect-ratio(4, 3);
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+
+  [class*=' col-'] {
+    margin-bottom: 1.5em;
+  }
+}
+
