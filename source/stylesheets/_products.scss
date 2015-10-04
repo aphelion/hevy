@@ -14,8 +14,8 @@
 
 .products-grid {
   a.product {
-    color: black;
-    &:visited { color: black; }
+    color: $text-color;
+    &:visited { color: $text-color; }
     &:hover { color: $hevy-burgundy; }
     &:active { color: $hevy-burgundy; }
 
