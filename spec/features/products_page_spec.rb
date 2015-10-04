@@ -14,20 +14,20 @@ describe 'Products Page', type: :feature do
   end
 
   it 'displays the primary image and contains a hidden secondary image for each product' do
-    primary_images = @content.all('.product .product-image-primary[data-image-url]', visible: :all).map { |div| div[:'data-image-url'] }
-    secondary_images = @content.all('.product .product-image-secondary[data-image-url]', visible: :all).map { |div| div[:'data-image-url'] }
+    primary_images = @content.all('.product .product-image-primary[data-background-image-url]', visible: :all).map { |div| div[:'data-background-image-url'] }
+    secondary_images = @content.all('.product .product-image-secondary[data-background-image-url]', visible: :all).map { |div| div[:'data-background-image-url'] }
 
     expect(primary_images.length).to eq 7
     expect(secondary_images.length).to eq 6
 
-    primary_images.each do |src|
-      expect(src).to be_url
-      expect(secondary_images).not_to include src
+    primary_images.each do |image_url|
+      expect(image_url).to be_url
+      expect(secondary_images).not_to include image_url
     end
 
-    secondary_images.each do |src|
-      expect(src).to be_url
-      expect(primary_images).not_to include src
+    secondary_images.each do |image_url|
+      expect(image_url).to be_url
+      expect(primary_images).not_to include image_url
     end
   end
 
