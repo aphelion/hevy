@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>HEVY</title>
     <link rel="stylesheet" href="{{ theme | theme_css_url }}">
-    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700,300" rel="stylesheet" type="text/css">
     {{ head_content }}
 </head>
 <body>
@@ -38,7 +38,7 @@
     </div>
 </nav>
 
-<div id="content">
+<div id="content"{% if page.url != '/' %} class="content"{% endif %}>
 {{ page_content }}
 </div>
 

@@ -1,18 +1,20 @@
-<h1>PRODUCT</h1>
+<div class="container-fluid">
+    <h1>PRODUCT</h1>
 
-<h2>{{ product.name }}</h2>
+    <h2>{{ product.name }}</h2>
 
-<div class="row">
-    <div class="col-sm-8"><img src="{{ product.image | product_image_url }}" class="img-responsive"></div>
-    <div class="col-sm-4">
-        {% if product.description != blank %}
-        {{ product.description | paragraphs }}
-        {% endif %}
-        <form>
-            <div class="form-group">
-                <label for="product-options">Product Options</label>
-                {{ product.options_in_stock | options_select:, 'product-options', 'form-control' }}
-            </div>
-        </form>
+    <div class="row">
+        <div class="col-sm-8"><img src="{{ product.image | product_image_url }}" class="img-responsive"></div>
+        <div class="col-sm-4">
+            {% if product.description != blank %}
+            {{ product.description | paragraphs }}
+            {% endif %}
+            <form>
+                <div class="form-group">
+                    <label for="product-options">Product Options</label>
+                    {{ product.options_in_stock | options_select:, 'product-options', 'form-control' }}
+                </div>
+            </form>
+        </div>
     </div>
 </div>
