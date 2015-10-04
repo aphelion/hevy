@@ -18,15 +18,26 @@
     &:visited { color: $text-color; }
     &:hover { color: $hevy-burgundy; }
     &:active { color: $hevy-burgundy; }
+    -webkit-transition: color 200ms;
+    -moz-transition: color 200ms;
+    -ms-transition: color 200ms;
+    -o-transition: color 200ms;
+    transition: color 200ms;
 
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
 
-    .product-image {
-      @include aspect-ratio(4, 3);
-      background-size: cover;
-      background-position: center center;
+    .product-images {
+      [class^="product-image"] {
+        @include aspect-ratio(4, 3);
+        background-size: cover;
+        background-position: center center;
+      }
+      .product-image-secondary {
+        margin-top: -75%;
+        display: none;
+      }
     }
   }
 

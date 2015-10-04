@@ -1,9 +1,12 @@
 $(document).ready(function () {
-    $( '.product-image' ).each(function() {
-        var attr = $(this).attr('data-image-url');
-
-        if (typeof attr !== typeof undefined && attr !== false) {
-            $(this).css('background-image', 'url('+attr+')');
+    $('[class^="product-image"]').each(function () {
+        var image = $(this).attr('data-image-url');
+        if (typeof image !== typeof undefined && image !== false) {
+            $(this).css('background-image', 'url(' + image + ')');
         }
+    });
+
+    $('.product').hover(function () {
+        $(this).find('.product-image-secondary').fadeToggle(200);
     });
 });
