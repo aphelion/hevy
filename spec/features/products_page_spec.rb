@@ -7,7 +7,10 @@ describe 'Products Page', type: :feature do
   it 'displays all 7 products in 1 rows' do
     expect(@content).to have_selector('div.row', count: 1)
     expect(@content).to have_selector('div.row div[class*=col]', count: 7)
-    expect(@content).to have_content 'DIY OR DIE HOODIE'
+  end
+
+  it 'displays name and price for products' do
+    expect(@content.find('.products-grid .product h4')).to have_content 'DIY OR DIE HOODIE $49.99'
   end
 
   it 'displays an image for each product' do
