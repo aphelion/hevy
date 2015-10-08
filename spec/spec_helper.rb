@@ -7,6 +7,7 @@ require 'capybara-screenshot/rspec'
 require 'dugway'
 
 Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
+Dir['./spec/helpers/**/*.rb'].sort.each { |f| require f }
 
 Capybara.save_and_open_page_path = 'spec/failures'
 
@@ -22,6 +23,8 @@ Capybara.save_and_open_page_path = 'spec/failures'
 #     port = Capybara.current_session.server.port
 #     puts "I wish I could check #{host} and #{port}"
 #   end
+#
+#   config.include CartHelper, type: :feature
 # end
 
 # ----------------------------------------
@@ -39,6 +42,8 @@ RSpec.configure do |config|
     puts ''
     puts 'Shutdown complete'
   end
+
+  config.include CartHelper, type: :feature
 end
 
 Capybara.run_server = false

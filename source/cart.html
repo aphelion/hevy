@@ -1,3 +1,14 @@
 <div class="container-fluid">
     <h1 class="top-heading">CART</h1>
+
+    <form method="post" action="/cart">
+        {% for item in cart.items %}
+        <p name="item-{{forloop.index}}">
+            <span>{{ item.product.name | upcase }}</span>
+            <span>{{ item.option.name }}</span>
+            <span>{{ item | item_quantity_input }}</span>
+        </p>
+        {% endfor %}
+        <button name="update" type="submit">Update Cart</button>
+    </form>
 </div>
