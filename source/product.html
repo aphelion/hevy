@@ -13,6 +13,9 @@
         </div>
         <div class="col-sm-6">
             <h1 class="top-heading">{{ product.name | upcase }}</h1>
+            <p class="lead">
+                <span>{{ product.default_price | money_with_sign }}</span>
+            </p>
             {% if product.description != blank %}
             {{ product.description | paragraphs }}
             {% endif %}

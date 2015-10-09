@@ -9,6 +9,10 @@ describe 'Product Page', type: :feature do
       expect(@content).to have_content 'DIY OR DIE HOODIE'
     end
 
+    it 'displays the product price' do
+      expect(@content).to have_content '$49.99'
+    end
+
     it 'displays the primary product image' do
       expect(@content).to have_selector('.product-image')
       expect(@content.find('.product-image')[:'data-background-image-url']).to be_url
