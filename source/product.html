@@ -6,10 +6,12 @@
             {% for image in product.images %}
             <div class="product-image-option" data-background-image-url="{{ image | product_image_url }}"></div>
             {% endfor %}
-            <div class="product-image-selectors">
+            <div class="product-image-selectors product-image-selectors-{{product.images.size}}">
                 {% for image in product.images %}
-                <div class="product-image-selector{% if forloop.first %} active{% endif %}"
-                     data-background-image-url="{{ image  | product_image_url }}"></div>
+                <div class="product-image-selector-col">
+                    <div class="product-image-selector{% if forloop.first %} active{% endif %}"
+                         data-background-image-url="{{ image  | product_image_url }}"></div>
+                </div>
                 {% endfor %}
             </div>
             {% endif %}

@@ -1,6 +1,7 @@
 @import "hevy-colors";
 @import "hevy-bootstrap-overrides";
 @import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/variables";
+@import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/mixins";
 
 @mixin aspect-ratio($width, $height) {
   position: relative;
@@ -10,6 +11,19 @@
     width: 100%;
     padding-top: ($height / $width) * 100%;
   }
+}
+
+@mixin make-a-column($columns, $gutter: $grid-gutter-width, $num-columns: $grid-columns) {
+  position: relative;
+  float: left;
+  width: percentage(($columns / $num-columns));
+  min-height: 1px;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+@mixin make-a-column-offset($columns, $num-grid-columns: $grid-columns) {
+  margin-left: percentage(($columns / $num-grid-columns));
 }
 
 [data-background-image-url] {
@@ -29,23 +43,48 @@
     }
 
     .product-image-selectors {
-      text-align: center;
-      margin-top: 1em;
+      margin-top: $grid-gutter-width;
       .product-image-selector {
         @include aspect-ratio(1, 1);
-        width: 100px;
-        display: inline-block;
 
-        margin-bottom: 1em;
+        margin-bottom: $grid-gutter-width;
 
         border: solid $text-color 0.3rem;
         &.active {
           border-color: $hevy-burgundy;
         }
 
-        margin-right: 1em;
+        margin-right: $grid-gutter-width;
         &:last-child {
           margin-right: 0;
+        }
+      }
+
+      @include make-row();
+      &.product-image-selectors-2 {
+        .product-image-selector-col {
+          @include make-a-column(1, $num-columns: 4);
+          &:first-child {
+            @include make-a-column-offset(1, 4);
+          }
+        }
+      }
+      &.product-image-selectors-3 {
+        .product-image-selector-col {
+          @include make-a-column(1, $num-columns: 5);
+          &:first-child {
+            @include make-a-column-offset(1, 5);
+          }
+        }
+      }
+      &.product-image-selectors-4 {
+        .product-image-selector-col {
+          @include make-a-column(1, $num-columns: 4);
+        }
+      }
+      &.product-image-selectors-5 {
+        .product-image-selector-col {
+          @include make-a-column(1, $num-columns: 5);
         }
       }
     }
