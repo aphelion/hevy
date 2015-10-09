@@ -17,8 +17,8 @@
             {{ product.description | paragraphs }}
             {% endif %}
             <form method="post" action="/cart">
-                {{ product.options_in_stock | options_select, 'product-options', 'form-control' }}
-                <button name="submit" type="submit" title="ADD TO CART">ADD TO CART</button>
+                <div class="form-group">{{ product.options_in_stock | options_select, 'product-options', 'form-control' }}</div>
+                <div class="form-group"><button name="submit" type="submit" title="ADD TO CART" class="form-control btn btn-default">ADD TO CART</button></div>
             </form>
         </div>
     </div>

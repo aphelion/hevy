@@ -1,14 +1,35 @@
 <div class="container-fluid">
     <h1 class="top-heading">CART</h1>
 
-    <form method="post" action="/cart">
-        {% for item in cart.items %}
-        <p name="item-{{forloop.index}}">
-            <span>{{ item.product.name | upcase }}</span>
-            <span>{{ item.option.name }}</span>
-            <span>{{ item | item_quantity_input }}</span>
-        </p>
-        {% endfor %}
-        <button name="update" type="submit">Update Cart</button>
-    </form>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form method="post" action="/cart">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Option</th>
+                        <th>Quantity</th>
+                    </tr>
+                    </thead>
+                    {% for item in cart.items %}
+                    <tbody>
+                    <tr name="item-{{forloop.index}}">
+                        <td>{{ item.product.name | upcase }}</td>
+                        <td>{{ item.option.name }}</td>
+                        <td>{{ item | item_quantity_input, item.option.id_qty, 'form-control' }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button name="update" type="submit" class="form-control">Update Cart</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
 </div>
