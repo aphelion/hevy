@@ -33,7 +33,7 @@ describe 'add to cart', type: :feature do
     find('option', text: 'X-Large').select_option
     click_on 'ADD TO CART'
 
-    visit '/product/seek-your-fortune-hoodie'
+    visit '/product/metal-tee'
     find('option', text: 'Small').select_option
     click_on 'ADD TO CART'
 
@@ -50,7 +50,7 @@ describe 'add to cart', type: :feature do
       expect(find_field('item_2_qty').value).to eq '2'
     end
     within '[name="item-3"]' do
-      expect(page).to have_content 'SEEK YOUR FORTUNE HOODIE Small'
+      expect(page).to have_content 'METAL TEE Small'
       expect(find_field('item_3_qty').value).to eq '1'
     end
 

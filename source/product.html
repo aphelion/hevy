@@ -16,10 +16,18 @@
             {% if product.description != blank %}
             {{ product.description | paragraphs }}
             {% endif %}
+
+            {% case product.status %}
+            {% when 'active' %}
             <form method="post" action="/cart">
                 <div class="form-group">{{ product.options_in_stock | options_select, 'product-options', 'form-control' }}</div>
                 <div class="form-group"><button name="submit" type="submit" title="ADD TO CART" class="form-control btn btn-default">ADD TO CART</button></div>
             </form>
+            {% when 'sold-out' %}
+            <h3>Sold Out</h3>
+            {% when 'coming-soon' %}
+            <h3>Coming Soon</h3>
+            {% endcase %}
         </div>
     </div>
 </div>
