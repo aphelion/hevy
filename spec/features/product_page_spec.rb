@@ -1,5 +1,3 @@
-require 'uri'
-
 describe 'Product Page', type: :feature do
   describe 'when viewing any product' do
     before :each do
@@ -38,12 +36,13 @@ describe 'Product Page', type: :feature do
       end
     end
 
-    it 'displays a facebook share button' do
-      fb_share_button = @content.find('.fb-share-button')
+    it 'displays facebook like and share buttons' do
+      fb_like_share_button = @content.find('.fb-like')
       product_page = page.current_url
-      within_frame(fb_share_button.find('iframe')) do
-        share_link = URI.unescape(find_link('Share')[:href])
-        expect(share_link).to have_content(product_page)
+      within_frame(fb_like_share_button.find('iframe')) do
+        expect(page).to have_content('Like')
+        expect(page).to have_content('Share')
+        expect(find('input[name="iframe_referer"]', visible: false)[:value]).to eq(product_page)
       end
     end
   end
