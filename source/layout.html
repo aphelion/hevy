@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>HEVY</title>
+    {% if product != blank and page.full_url contains '/product/' %}
+    <meta property="og:title" content="{{ product.name | escape }}">
+    <meta property="og:type" content="product.item">
+    <meta property="og:url" content="{{ page.full_url }}">
+    <meta property="og:image" content="{{ product.image.url }}">
+    {% endif %}
+    <meta property="og:site_name" content="{{ store.name | escape }}">
+    <title>{{store.name}}</title>
     <link rel="stylesheet" href="{{ theme | theme_css_url }}">
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700,300" rel="stylesheet" type="text/css">
     {{ head_content }}
