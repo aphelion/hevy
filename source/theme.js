@@ -5,3 +5,4 @@
 //= require vendor/superslides-0.6.2/jquery.superslides
 //= require javascripts/lookbook
 //= require javascripts/products
+//= require javascripts/facebook

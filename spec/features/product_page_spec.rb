@@ -1,3 +1,5 @@
+require 'uri'
+
 describe 'Product Page', type: :feature do
   describe 'when viewing any product' do
     before :each do
@@ -33,6 +35,15 @@ describe 'Product Page', type: :feature do
       expect(new_image_style).not_to eq old_image_style
       [old_image_style, new_image_style].each do |style|
         expect(style[/background-image: url\((.+)\)/, 1]).to be_url
+      end
+    end
+
+    it 'displays a facebook share button' do
+      fb_share_button = @content.find('.fb-share-button')
+      product_page = page.current_url
+      within_frame(fb_share_button.find('iframe')) do
+        share_link = URI.unescape(find_link('Share')[:href])
+        expect(share_link).to have_content(product_page)
       end
     end
   end
