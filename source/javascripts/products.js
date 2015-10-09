@@ -7,21 +7,27 @@ $(document).ready(function () {
     });
 
     $('.product').hover(function () {
-        $(this).find('.product-image-secondary').fadeToggle(200);
+        $(this).find('.product-image-secondary').fadeToggle(250);
     });
 
-    $('.product-page .product-image-option').click(function () {
-        var productImage = $('.product-page .product-image');
-        var activeProductOption = $(this);
-        var oldImageUrlString = productImage.css('background-image');
-        var newImageUrlString = 'url(' + activeProductOption.attr('data-background-image-url') + ')';
+    $('.product-page .product-image-selector').click(function () {
+        var newImageSelector = $(this);
+        var productImageNext = $('.product-page .product-image-option[data-background-image-url="'
+            + newImageSelector.attr('data-background-image-url')
+            + '"]');
+        var productImageCurrent = $('.product-page .product-image-current');
+        var oldImageUrlString = productImageCurrent.css('background-image');
+        var newImageUrlString = productImageNext.css('background-image');
+
         if (oldImageUrlString !== newImageUrlString) {
-            $('.product-page .product-image-option.active').removeClass('active');
-            activeProductOption.addClass('active');
-            productImage.stop().fadeTo(250, 0, function () {
-                $(this).css('background-image', 'url(' + activeProductOption.attr('data-background-image-url') + ')')
-                    .fadeTo(250, 1);
-            });
+            $('.product-page .product-image-selector.active').removeClass('active');
+            newImageSelector.addClass('active');
+            productImageNext
+                .stop()
+                .fadeTo(500, 1, function () {
+                    productImageCurrent.css('background-image', newImageUrlString);
+                    $(this).hide();
+                });
         }
     })
 });

@@ -14,8 +14,8 @@ describe 'Product Page', type: :feature do
     end
 
     it 'displays the primary product image' do
-      expect(@content).to have_selector('.product-image')
-      expect(@content.find('.product-image')[:'data-background-image-url']).to be_url
+      expect(@content).to have_selector('.product-image-current')
+      expect(@content.find('.product-image-current')[:'data-background-image-url']).to be_url
     end
 
     it 'displays the product description' do
@@ -27,15 +27,14 @@ describe 'Product Page', type: :feature do
     end
 
     it 'displays thumbnails of all the image options' do
-      expect(@content.find('.product-images')).to have_selector('.product-image-option', count: 2)
+      expect(@content.find('.product-images')).to have_selector('.product-image-selector', count: 2)
     end
 
     it 'clicking on thumbnails changes the product image' do
-      old_image_style = @content.find('.product-image')[:style]
-      @content.all('.product-images .product-image-option')[1].click
-      new_image_style = @content.find('.product-image')[:style]
-      expect(new_image_style).not_to eq old_image_style
-      [old_image_style, new_image_style].each do |style|
+      old_image_style = @content.find('.product-image-current')[:style]
+      @content.all('.product-images .product-image-selector')[1].click
+      expect(@content).not_to have_selector(".product-image-current[style=\"#{old_image_style}\"]")
+      [old_image_style, @content.find('.product-image-current')[:style]].each do |style|
         expect(style[/background-image: url\((.+)\)/, 1]).to be_url
       end
     end

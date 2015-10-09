@@ -18,14 +18,20 @@
 }
 
 .product-page {
-  .product-image {
-    @include aspect-ratio(4, 3);
-  }
   .product-images {
-    .product-image-options {
+    .product-image-current {
+      @include aspect-ratio(4, 3);
+    }
+    .product-image-option {
+      @include aspect-ratio(4, 3);
+      margin-top: -75%;
+      display: none;
+    }
+
+    .product-image-selectors {
       text-align: center;
       margin-top: 1em;
-      .product-image-option {
+      .product-image-selector {
         @include aspect-ratio(1, 1);
         width: 100px;
         display: inline-block;
