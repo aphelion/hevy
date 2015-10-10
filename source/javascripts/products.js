@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // responsive, aspect-ratio constrained image setup
     $('[data-background-image-url]').each(function () {
         var image = $(this).attr('data-background-image-url');
         if (typeof image !== typeof undefined && image !== false) {
@@ -6,10 +7,12 @@ $(document).ready(function () {
         }
     });
 
+    // product page hover animation
     $('.product').hover(function () {
         $(this).find('.product-image-secondary').stop().fadeToggle(250);
     });
 
+    // products page image selection animation
     $('.product-page .product-image-selector').click(function () {
         var newImageSelector = $(this);
         var productImageNext = $('.product-page .product-image-option[data-background-image-url="'
