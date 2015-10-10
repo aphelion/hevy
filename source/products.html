@@ -3,7 +3,7 @@
     {% get products from products.all %}
     <div class="row products-grid">
         {% for product in products %}
-        <div class="col-md-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <a class="product" href="{{ product.url }}">
                 <div class="product-images">
                     <div class="product-image-primary"
@@ -17,15 +17,17 @@
                     {% endif %}
                 </div>
                 <h4>
-                    <span>{{ product.name | upcase }} /</span>
-                    {% case product.status %}
-                    {% when 'active' %}
-                    <span>{{ product.default_price | money_with_sign }}</span>
-                    {% when 'sold-out' %}
-                    <span>SOLD OUT</span>
-                    {% when 'coming-soon' %}
-                    <span>COMING SOON</span>
-                    {% endcase %}
+                    <div>{{ product.name | upcase }}</div>
+                    <small>
+                        {% case product.status %}
+                        {% when 'active' %}
+                        {{ product.default_price | money_with_sign }}
+                        {% when 'sold-out' %}
+                        SOLD OUT
+                        {% when 'coming-soon' %}
+                        COMING SOON
+                        {% endcase %}
+                    </small>
                 </h4>
             </a>
         </div>

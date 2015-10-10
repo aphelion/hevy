@@ -116,6 +116,12 @@
         display: none;
       }
     }
+
+    h4, h4 > * {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 
   [class^='col-'] {
