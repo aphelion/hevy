@@ -7,7 +7,7 @@ $(document).ready(function () {
     });
 
     $('.product').hover(function () {
-        $(this).find('.product-image-secondary').fadeToggle(250);
+        $(this).find('.product-image-secondary').stop().fadeToggle(250);
     });
 
     $('.product-page .product-image-selector').click(function () {
