@@ -24,6 +24,12 @@ describe 'add to cart', type: :feature do
     expect(@content).to have_content 'Medium'
   end
 
+  it 'adds the specified quantity to the cart' do
+    fill_in 'product-quantity', with: 2
+    click_on 'ADD TO CART'
+    expect(find_field('item_1_qty').value).to eq '2'
+  end
+
   it 'shows the amount of each product / option combination added to the cart' do
     visit '/product/diy-or-die-hoodie'
     find('option', text: 'Medium').select_option

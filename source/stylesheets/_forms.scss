@@ -1,0 +1,21 @@
+@import "hevy-colors";
+@import "hevy-bootstrap-overrides";
+@import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/variables";
+
+.form-multi-inline {
+  .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  label {
+    float: left;
+    line-height: $input-height-base;
+    padding-right: 1em;
+  }
+
+  span {
+    display: block;
+    overflow: hidden;
+  }
+}
