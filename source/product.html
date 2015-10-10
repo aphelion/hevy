@@ -17,7 +17,7 @@
             {% endif %}
         </div>
         <div class="col-sm-6">
-            <h1 class="top-heading">{{ product.name | upcase }}</h1>
+            <h1 class="title">{{ product.name | upcase }}</h1>
             <p class="lead">
                 <span>{{ product.default_price | money_with_sign }}</span>
                 {% case product.status %}
