@@ -22,9 +22,9 @@
                 <span>{{ product.default_price | money_with_sign }}</span>
                 {% case product.status %}
                 {% when 'sold-out' %}
-                <span>/ Sold Out</span>
+                <span>/ SOLD OUT</span>
                 {% when 'coming-soon' %}
-                <span>/ Coming Soon</span>
+                <span>/ COMING SOON</span>
                 {% endcase %}
             </p>
             {% if product.description != blank %}

@@ -9,8 +9,16 @@ describe 'Products Page', type: :feature do
     expect(@content).to have_selector('div.row div[class*=col]', count: 7)
   end
 
-  it 'displays name and price for products' do
-    expect(@content).to have_content 'DIY OR DIE HOODIE $49.99'
+  it 'displays name and price for active products' do
+    expect(@content).to have_content 'DIY OR DIE HOODIE / $49.99'
+  end
+
+  it 'displays name and status for sold out products' do
+    expect(@content).to have_content 'SEEK YOUR FORTUNE HOODIE / SOLD OUT'
+  end
+
+  it 'displays name and status for coming soon products' do
+    expect(@content).to have_content 'SCRIPT TEE / COMING SOON'
   end
 
   it 'displays the primary image and contains a hidden secondary image for each product' do

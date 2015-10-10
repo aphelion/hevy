@@ -64,7 +64,7 @@ describe 'Product Page', type: :feature do
       visit '/product/seek-your-fortune-hoodie'
       @content = find('#content')
       expect(@content).not_to have_selector('form[action="/cart"]')
-      expect(@content).to have_content('Sold Out')
+      expect(@content).to have_content('SOLD OUT')
     end
   end
 
@@ -73,7 +73,7 @@ describe 'Product Page', type: :feature do
       visit '/product/script-tee'
       @content = find('#content')
       expect(@content).not_to have_selector('form[action="/cart"]')
-      expect(@content).to have_content('Coming Soon')
+      expect(@content).to have_content('COMING SOON')
     end
   end
 end
