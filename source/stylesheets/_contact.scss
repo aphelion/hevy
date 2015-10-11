@@ -1,0 +1,28 @@
+@import "hevy-colors";
+@import "hevy-bootstrap-overrides";
+@import "mixins";
+@import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/mixins";
+@import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/variables";
+@import "compass";
+
+.contact-page {
+  background-color: white;
+}
+
+#about {
+  color: black;
+  @include calc(min-height, "100vh - #{$navbar-height}");
+  @include background-image(linear-gradient(top, rgba(white, 0) 5vh, rgba(white, 0.9) 40vh, rgba(white, 1) 100vh), url('images/two-dourpower-20211.jpg'));
+  background-size: cover;
+  background-position: center center;
+  padding: 20vh 4em 2em 4em;
+}
+
+#contact {
+  color: black;
+  @include calc(min-height, "100vh - #{$navbar-height}");
+  @include background-image(linear-gradient(top, rgba(white, 0) 5vh, rgba(white, 0.9) 40vh, rgba(white, 1) 100vh), url('images/church-cherry-20205.jpg'));
+  background-size: cover;
+  background-position: center center;
+  padding: 20vh 4em 2em 4em;
+}

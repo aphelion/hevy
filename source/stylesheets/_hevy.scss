@@ -23,9 +23,10 @@ body {
   }
 }
 
-#content.content {
+#content .content {
   background-color: white;
-  padding: 4rem 0;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
   @include calc(min-height, "100vh - #{$navbar-height} - #{$navbar-margin-bottom}");
 }
 

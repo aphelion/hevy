@@ -1,4 +1,4 @@
-<div class="container-fluid product-page">
+<div class="container-fluid content product-page">
     <div class="row">
         <div class="col-sm-6 product-images">
             <div class="product-image-current" data-background-image-url="{{ product.image | product_image_url }}"></div>
@@ -42,8 +42,8 @@
                 </div>
                 {% endif %}
                 <div class="row form-group">
-                        <label class="col-xs-2 col-sm-2 control-label" for="product-quantity">Quantity:</label>
-                        <div class="col-xs-10 col-sm-4">{{ product | product_quantity_input, 1, 'product-quantity', 'form-control' }}</div>
+                    <label class="col-xs-2 col-sm-2 control-label" for="product-quantity">Quantity:</label>
+                    <div class="col-xs-10 col-sm-4">{{ product | product_quantity_input, 1, 'product-quantity', 'form-control' }}</div>
                 </div>
                 <div class="row">
                     <div class="col-sm-4 col-sm-offset-2 form-group">
