@@ -37,3 +37,13 @@ body {
   @include hevy-button-variant(white, $hevy-black, $hevy-burgundy);
 }
 
+.btn {
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      outline: none;
+    }
+  }
+}
