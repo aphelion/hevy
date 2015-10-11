@@ -1,9 +1,68 @@
+@import "hevy-colors";
 @import "hevy-bootstrap-overrides";
 @import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/variables";
 
 @mixin calc($property, $expression) {
   #{$property}: -webkit-calc(#{$expression});
   #{$property}: calc(#{$expression});
+}
+
+@mixin hevy-button-variant($color, $primary-background, $secondary-background) {
+  $primary-border: darken($primary-background, 12%);
+  $secondary-border: darken($secondary-background, 12%);
+  color: $color;
+  background-color: $primary-background;
+  border-color: $primary-border;
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: $secondary-background;
+    border-color: $secondary-border;
+  }
+  &:hover {
+    color: $color;
+    background-color: $secondary-background;
+    border-color: $secondary-border;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: $secondary-background;
+    border-color: $secondary-border;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: darken($secondary-background, 5%);
+      border-color: darken($secondary-border, 5%);
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: $primary-background;
+      border-color: $primary-border;
+    }
+  }
+
+  .badge {
+    color: $primary-background;
+    background-color: $color;
+  }
 }
 
 body {
@@ -30,4 +89,8 @@ body {
   background-color: white;
   padding: 4rem 0;
   @include calc(min-height, "100vh - #{$navbar-height} - #{$navbar-margin-bottom}");
+}
+
+.btn-hevy {
+  @include hevy-button-variant(white, black, $hevy-burgundy);
 }
