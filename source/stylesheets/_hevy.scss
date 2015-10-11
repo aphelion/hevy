@@ -92,5 +92,5 @@ body {
 }
 
 .btn-hevy {
-  @include hevy-button-variant(white, black, $hevy-burgundy);
+  @include hevy-button-variant(white, $hevy-black, $hevy-burgundy);
 }
