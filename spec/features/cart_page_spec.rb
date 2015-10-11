@@ -4,6 +4,10 @@ describe 'Cart Page', type: :feature do
     @content = find('#content')
   end
 
+  after :each do
+    clear_cart
+  end
+
   it 'indicates the current page' do
     expect(@content).to have_content('CART')
   end
@@ -25,8 +29,6 @@ describe 'Cart Page', type: :feature do
     within '[name="item-2"]' do
       expect(find_field('item_2_qty').value).to eq '1'
     end
-
-    clear_cart
   end
 
   it 'links from each product back to the product page' do
