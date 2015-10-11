@@ -13,12 +13,28 @@ describe 'Cart Page', type: :feature do
   end
 
   describe 'when there are products in the cart' do
-    it 'displays a cart form' do
+    before :each do
       visit '/product/diy-or-die-hoodie'
       find('option', text: 'Small').select_option
       click_on 'ADD TO CART'
+    end
 
+    it 'displays a cart form' do
       expect(@content).to have_selector('form[action="/cart"]')
+    end
+
+    it 'links from each product back to the product page' do
+      click_link 'DIY OR DIE HOODIE'
+      expect(URI.parse(current_url).path).to eq '/product/diy-or-die-hoodie'
+    end
+
+    it 'displays a button to checkout' do
+      click_button 'Checkout'
+      expect(URI.parse(current_url).path).to eq '/checkout'
+    end
+
+    it 'provides a link back to the products page' do
+      expect(@content).to have_link('Continue Shopping')
     end
   end
 
@@ -53,13 +69,5 @@ describe 'Cart Page', type: :feature do
     within '[name="item-2"]' do
       expect(find_field('item_2_qty').value).to eq '1'
     end
-  end
-
-  it 'links from each product back to the product page' do
-    visit '/product/diy-or-die-hoodie'
-    find('option', text: 'Small').select_option
-    click_on 'ADD TO CART'
-    click_link 'DIY OR DIE HOODIE'
-    expect(URI.parse(current_url).path).to eq '/product/diy-or-die-hoodie'
   end
 end
