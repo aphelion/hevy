@@ -50,7 +50,7 @@
             {% endif %}
 
             <div class="row">
-                <div class="col-sm-4 col-sm-offset-2">
+                <div class="col-sm-4{% if product.status == 'active' %} col-sm-offset-2{% endif %}">
                     <div class="fb-like" data-href="{{product.url}}" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                 </div>
             </div>
