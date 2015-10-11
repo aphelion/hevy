@@ -28,4 +28,12 @@ describe 'Cart Page', type: :feature do
 
     clear_cart
   end
+
+  it 'links from each product back to the product page' do
+    visit '/product/diy-or-die-hoodie'
+    find('option', text: 'Small').select_option
+    click_on 'ADD TO CART'
+    click_link 'DIY OR DIE HOODIE'
+    expect(URI.parse(current_url).path).to eq '/product/diy-or-die-hoodie'
+  end
 end
