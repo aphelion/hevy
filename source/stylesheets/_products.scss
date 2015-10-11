@@ -34,11 +34,11 @@
 .product-page {
   .product-images {
     .product-image-current {
-      @include aspect-ratio(4, 3);
+      @include aspect-ratio(16, 9);
     }
     .product-image-option {
-      @include aspect-ratio(4, 3);
-      margin-top: -75%;
+      @include aspect-ratio(16, 9);
+      margin-top: percentage(-9/16);
       display: none;
     }
 
