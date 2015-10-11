@@ -24,6 +24,10 @@ $footer-height: 25vh;
 
   #lookbook {
     display: none;
+    [data-background-image-url] {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
