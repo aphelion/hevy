@@ -3,19 +3,18 @@
         <i class="icon-barbell icon-spin"></i>
     </div>
     <div id="lookbook">
+        {% if theme.image_sets.lookbook_images.size > 0 %}
         <ul class="slides-container">
-            <li><div data-background-image-url="images/lookbook/bud-and-dick-4999.jpg"/></li>
-            <li><div data-background-image-url="images/lookbook/bathing-beauty-parade-18747.jpg"/></li>
-            <li><div data-background-image-url="images/lookbook/woodberry-gymnasts-6784.jpg"/></li>
-            <li><div data-background-image-url="images/lookbook/radio-days-6682.jpg"/></li>
-            <li><div data-background-image-url="images/lookbook/cu-hoops-9262.jpg"/></li>
-            <li><div data-background-image-url="images/lookbook/volley-of-the-dolls-19294.jpg"/></li>
-            <li><div data-background-image-url="images/lookbook/boys-gym-8770.jpg"/></li>
-            <li><div data-background-image-url="images/lookbook/beach-policeman-1070.jpg"/></li>
-            <li><div data-background-image-url="images/lookbook/round-two-10117.jpg"/></li>
-            <li><div data-background-image-url="images/lookbook/tap-972.jpg"/></li>
-            <li><div data-background-image-url="images/lookbook/sportin-life-8052.jpg"/></li>
+            {% for image in theme.image_sets.lookbook_images %}
+            <li><div data-background-image-url="{{ image.url }}"/></li>
+            {% endfor %}
         </ul>
+        <div class="preload">
+            {% for image in theme.image_sets.lookbook_images %}
+            <img src="{{ image.url }}"/>
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
 </div>
 
