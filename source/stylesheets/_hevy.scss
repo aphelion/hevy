@@ -29,6 +29,10 @@ body {
   @include calc(min-height, "100vh - #{$navbar-height} - #{$navbar-margin-bottom}");
 }
 
+.table tbody > tr > td {
+  vertical-align: middle;
+}
+
 .btn-hevy {
   @include hevy-button-variant(white, $hevy-black, $hevy-burgundy);
 }
