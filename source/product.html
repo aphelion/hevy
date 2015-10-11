@@ -33,10 +33,14 @@
 
             {% if product.status == 'active' %}
             <form method="post" action="/cart" class="form-multi-inline">
+                {% if product.has_default_option %}
+                {{ product.option | hidden_option_input }}
+                {% else %}
                 <div class="row form-group">
                     <label class="col-xs-2 col-sm-2 control-label" for="product-options">Option:</label>
                     <div class="col-xs-10 col-sm-4">{{ product.options_in_stock | options_select, 'product-options', 'form-control' }}</div>
                 </div>
+                {% endif %}
                 <div class="row form-group">
                         <label class="col-xs-2 col-sm-2 control-label" for="product-quantity">Quantity:</label>
                         <div class="col-xs-10 col-sm-4">{{ product | product_quantity_input, 1, 'product-quantity', 'form-control' }}</div>

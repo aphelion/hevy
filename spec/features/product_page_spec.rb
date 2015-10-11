@@ -22,10 +22,6 @@ describe 'Product Page', type: :feature do
       expect(@content).to have_content('Lorem ipsum dolor sit amet')
     end
 
-    it 'offers the product options in a select element' do
-      expect(@content).to have_select('product-options', with_options: ['Small', 'Medium', 'Large', 'X-Large - $59.99'])
-    end
-
     it 'displays thumbnails of all the image options' do
       expect(@content.find('.product-images')).to have_selector('.product-image-selector', count: 2)
     end
@@ -47,6 +43,26 @@ describe 'Product Page', type: :feature do
         expect(page).to have_content('Share')
         expect(find('input[name="iframe_referer"]', visible: false)[:value]).to eq(product_page)
       end
+    end
+  end
+
+  describe 'when viewing a product with options' do
+    before :each do
+      visit '/product/diy-or-die-hoodie'
+      @content = find('#content')
+    end
+    it 'offers the product options in a select element' do
+      expect(@content).to have_select('product-options', with_options: ['Small', 'Medium', 'Large', 'X-Large - $59.99'])
+    end
+  end
+
+  describe 'when viewing a product without options' do
+    before :each do
+      visit '/product/script-tote'
+      @content = find('#content')
+    end
+    it 'does not show any product options' do
+      expect(@content).not_to have_select('product-options')
     end
   end
 

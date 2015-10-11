@@ -28,6 +28,17 @@ describe 'Cart Page', type: :feature do
       expect(URI.parse(current_url).path).to eq '/product/diy-or-die-hoodie'
     end
 
+    it 'shows product options for products with options' do
+      expect(@content.find('[name="item-1"] td:nth-child(2)')).to have_content 'Small'
+    end
+
+    it 'does not show product options for products without options' do
+      visit '/product/script-tote'
+      click_on 'ADD TO CART'
+
+      expect(@content.find('[name="item-2"] td:nth-child(2)').text).to eq ''
+    end
+
     it 'displays a button to checkout' do
       click_button 'Checkout'
       expect(URI.parse(current_url).path).to eq '/checkout'

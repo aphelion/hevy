@@ -17,7 +17,7 @@
                     <tbody>
                     <tr name="item-{{forloop.index}}">
                         <td><a href="{{ item.product.url }}">{{ item.product.name | upcase }}</a></td>
-                        <td>{{ item.option.name }}</td>
+                        <td>{% unless item.product.has_default_option %}{{ item.option.name }}{% endunless %}</td>
                         <td>{{ item | item_quantity_input, item.option.id_qty, 'form-control' }}</td>
                     </tr>
                     {% endfor %}
