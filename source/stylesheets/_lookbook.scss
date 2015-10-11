@@ -34,30 +34,15 @@ $footer-height: 25vh;
     position: relative;
 
     img#footer-logo {
-      $shadowWidth: 0.5em;
-
       position: absolute;
-      bottom: $shadowWidth;
+      bottom: 0;
 
-      @include calc(height, "(#{$footer-height} - #{$shadowWidth}) * 4/3");
+      height: $footer-height * 4/3;
 
       left: 50%;
       transform: translate(-50%, 0);
 
       z-index: 3;
-
-      -webkit-filter: none;
-      filter: none;
-      &:hover {
-        -webkit-filter: drop-shadow(0 0 $shadowWidth #999);
-        filter: drop-shadow(0 0 $shadowWidth #999);
-      }
-
-      -webkit-transition: all 0.5s;
-      -moz-transition: all 0.5s;
-      -ms-transition: all 0.5s;
-      -o-transition: all 0.5s;
-      transition: all 0.5s;
     }
   }
 }
