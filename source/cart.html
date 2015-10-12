@@ -1,4 +1,4 @@
-<div class="container-fluid content">
+<div class="container-fluid content-with-footer">
     <h1 class="title">CART</h1>
 
     <div class="row">
@@ -13,8 +13,8 @@
                         <th>Quantity</th>
                     </tr>
                     </thead>
-                    {% for item in cart.items %}
                     <tbody>
+                    {% for item in cart.items %}
                     <tr name="item-{{forloop.index}}">
                         <td><a href="{{ item.product.url }}">{{ item.product.name | upcase }}</a></td>
                         <td>{% unless item.product.has_default_option %}{{ item.option.name }}{% endunless %}</td>
@@ -40,5 +40,11 @@
             </div>
             {% endif %}
         </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div id="footer-bar">
+        <a href="/products"><img id="footer-logo" src="{{ 'hevy-main.svg' | theme_image_url }}"/></a>
     </div>
 </div>
