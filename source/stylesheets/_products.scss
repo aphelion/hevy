@@ -63,9 +63,9 @@
       @include make-row();
       &.product-image-selectors-2 {
         .product-image-selector-col {
-          @include make-a-column(1, $num-columns: 4);
+          @include make-a-column(1, $num-columns: 6);
           &:first-child {
-            @include make-a-column-offset(1, 4);
+            @include make-a-column-offset(2, 6);
           }
         }
       }
