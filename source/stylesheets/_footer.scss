@@ -1,0 +1,21 @@
+$footer-height: 25vh;
+
+#footer {
+  #footer-bar {
+    height: $footer-height;
+    background-color: black;
+    position: relative;
+
+    img#footer-logo {
+      position: absolute;
+      bottom: 0;
+
+      height: $footer-height * 4/3;
+
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      z-index: 3;
+    }
+  }
+}

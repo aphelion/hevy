@@ -1,7 +1,6 @@
 @import "hevy-bootstrap-overrides";
 @import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/variables";
-
-$footer-height: 25vh;
+@import "footer";
 
 @mixin calc($property, $expression) {
   #{$property}: -webkit-calc(#{$expression});
@@ -34,26 +33,6 @@ $footer-height: 25vh;
         width: 1px;
         height: 1px;
       }
-    }
-  }
-}
-
-#footer {
-  #footer-bar {
-    height: $footer-height;
-    background-color: black;
-    position: relative;
-
-    img#footer-logo {
-      position: absolute;
-      bottom: 0;
-
-      height: $footer-height * 4/3;
-
-      left: 50%;
-      transform: translate(-50%, 0);
-
-      z-index: 3;
     }
   }
 }

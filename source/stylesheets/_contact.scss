@@ -1,5 +1,6 @@
 @import "hevy-colors";
 @import "hevy-bootstrap-overrides";
+@import "footer";
 @import "mixins";
 @import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/variables";
 @import "compass";
@@ -15,14 +16,13 @@
     @include background-image(linear-gradient(top, rgba(white, 0) 5vh, rgba(white, 0.9) 40vh, rgba(white, 1) 100%), url($url));
     @include background-size(cover);
     background-position: center center;
-    @include calc(min-height, "100vh - #{$navbar-height}");
+    @include calc(min-height, "100vh - #{$navbar-height} - #{$footer-height}");
   }
 }
 
 #contact-page {
   color: $hevy-black;
   background-color: white;
-  @include calc(min-height, "100vh - #{$navbar-height}");
 }
 
 #about {
