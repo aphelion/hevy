@@ -1,5 +1,6 @@
 @import "hevy-bootstrap-overrides";
 @import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/variables";
+@import "compass";
 
 $navbar-logo-padding: $navbar-height / 6;
 
@@ -33,5 +34,14 @@ $navbar-logo-padding: $navbar-height / 6;
     -ms-transition: color 0.5s;
     -o-transition: color 0.5s;
     transition: color 0.5s;
+  }
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    @include background-image(linear-gradient(left, rgba($navbar-inverse-link-active-bg, 1) 0%, rgba($navbar-inverse-link-active-bg, 0) 100%));
   }
 }
