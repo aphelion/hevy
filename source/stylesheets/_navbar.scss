@@ -37,11 +37,13 @@ $navbar-logo-padding: $navbar-height / 6;
   }
 }
 
-.navbar-inverse .navbar-nav > .active > a {
-  &,
-  &:hover,
-  &:focus {
-    background-color: transparent;
-    @include background-image(linear-gradient(left, rgba($navbar-inverse-link-active-bg, 1) 0%, rgba($navbar-inverse-link-active-bg, 0) 100%));
+@media (max-width: $screen-xs-max) {
+  .navbar-inverse .collapse .navbar-nav > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      @include background-image(linear-gradient(left, rgba($navbar-inverse-link-active-bg, 1) 0%, rgba($navbar-inverse-link-active-bg, 0) 100%));
+    }
   }
 }
