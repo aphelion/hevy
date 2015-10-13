@@ -47,6 +47,26 @@ describe 'Cart Page', type: :feature do
     it 'provides a link back to the products page' do
       expect(@content).to have_link('Continue Shopping')
     end
+
+    it 'shows unit and total prices for each product' do
+      fill_in('item_1_qty', with: 2)
+      click_button('Update Cart')
+      visit '/product/script-tote'
+      click_on 'ADD TO CART'
+
+      within '[name="item-1"]' do
+        expect(find('#item-1-unit-price')).to have_content '$49.99'
+        expect(find('#item-1-price')).to have_content '$99.98'
+      end
+      within '[name="item-2"]' do
+        expect(find('#item-2-unit-price')).to have_content '$19.99'
+        expect(find('#item-2-price')).to have_content '$19.99'
+      end
+    end
+
+    it 'shows the cart total' do
+      expect(find('#cart-total')).to have_content '$49.99'
+    end
   end
 
   describe 'when there are not products in the cart' do

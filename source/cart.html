@@ -10,7 +10,9 @@
                     <tr>
                         <th>Item</th>
                         <th>Option</th>
+                        <th>Unit Price</th>
                         <th>Quantity</th>
+                        <th>Total Price</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -18,13 +20,16 @@
                     <tr name="item-{{forloop.index}}">
                         <td><a href="{{ item.product.url }}">{{ item.product.name | upcase }}</a></td>
                         <td>{% unless item.product.has_default_option %}{{ item.option.name }}{% endunless %}</td>
-                        <td>{{ item | item_quantity_input, item.option.id_qty, 'form-control' }}</td>
+                        <td><span id="item-{{ item.id }}-unit-price">{{ item.unit_price | money_with_sign }}</span></td>
+                        <td>{{ item | item_quantity_input, item.option.id_qty, 'form-control form-input-small' }}</td>
+                        <td><span id="item-{{ item.id }}-price">{{ item.price | money_with_sign }}</span></td>
                     </tr>
                     {% endfor %}
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td>
+                        <td id="cart-total" colspan="2">
+                            <h2>Total: {{cart.total | money_with_sign}}</h2>
+                        </td>
+                        <td colspan="3">
                             <div class="form-group"><button name="update" type="submit" class="form-control btn btn-default">Update Cart</button></div>
                             <div class="form-group"><button name="checkout" type="submit" class="form-control btn btn-hevy">Checkout</button></div>
                             <div class="form-group"><a href="/products" class="btn btn-block btn-link">Continue Shopping</a></div>
