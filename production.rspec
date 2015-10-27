@@ -1,0 +1,4 @@
+-c
+--order rand
+--pattern "spec/production/**/*_spec.rb"
+--require production_spec_helper

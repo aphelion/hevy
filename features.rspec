@@ -1,0 +1,4 @@
+-c
+--order rand
+--pattern "spec/features/**/*_spec.rb"
+--require features_spec_helper
