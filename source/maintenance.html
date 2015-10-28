@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% assign url_array = page.full_url | split: '/' %}
+{% if url_array[2] contains 'localhost' %}
+    {% assign assets_host = url_array[2] | prepend: '//' | prepend: url_array[0] | append: '/' %}
+{% else %}
+    {% assign assets_host = 'http://assets.hevy.la/' %}
+{% endif %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>{{store.name}}</title>
+    <link rel="stylesheet" href="{{assets_host}}/theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700,300" rel="stylesheet" type="text/css">
+    {{ head_content }}
+</head>
+<body>
+<div id="content">
+    <div class="container-fluid content-with-footer text-center">
+        <h2>We're working on our site at the moment.</h2>
+        <p>Please check back soon.</p>
+    </div>
+    <div id="footer">
+        <div id="footer-bar">
+            <img id="footer-logo" src="{{assets_host}}/images/hevy-main.svg"/>
+        </div>
+    </div>
+</div>
+
+<script src="{{assets_host}}/theme.js"></script>
+</body>
+</html>

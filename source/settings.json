@@ -17,12 +17,7 @@
     {
       "variable": "slideshow_images",
       "label": "Slideshow",
-      "description": "This is a slideshow"
-    },
-    {
-      "variable": "lookbook_images",
-      "label": "Lookbook",
-      "description": "This is a lookbook",
+      "description": "This is a slideshow",
       "defaults": [
         "sample-lookbook/bud-and-dick-4999.jpg",
         "sample-lookbook/bathing-beauty-parade-18747.jpg",
@@ -36,6 +31,11 @@
         "sample-lookbook/tap-972.jpg",
         "sample-lookbook/sportin-life-8052.jpg"
       ]
+    },
+    {
+      "variable": "lookbook_images",
+      "label": "Lookbook",
+      "description": "This is a lookbook"
     }
   ],
   "fonts": [

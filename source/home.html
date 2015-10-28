@@ -1,16 +1,22 @@
+{% assign url_array = page.full_url | split: '/' %}
+{% if url_array[2] contains 'localhost' %}
+    {% assign assets_host = url_array[2] | prepend: '//' | prepend: url_array[0] | append: '/' %}
+{% else %}
+    {% assign assets_host = 'http://assets.hevy.la/' %}
+{% endif %}
 <div id="lookbook-container">
     <div id="lookbook-spinner">
         <i class="icon-barbell icon-spin"></i>
     </div>
     <div id="lookbook">
-        {% if theme.image_sets.lookbook_images.size > 0 %}
+        {% if theme.image_sets.slideshow_images.size > 0 %}
         <ul class="slides-container">
-            {% for image in theme.image_sets.lookbook_images %}
+            {% for image in theme.image_sets.slideshow_images %}
             <li><div data-background-image-url="{{ image.url }}"/></li>
             {% endfor %}
         </ul>
         <div class="preload">
-            {% for image in theme.image_sets.lookbook_images %}
+            {% for image in theme.image_sets.slideshow_images %}
             <img src="{{ image.url }}"/>
             {% endfor %}
         </div>
@@ -20,6 +26,6 @@
 
 <div id="footer">
     <div id="footer-bar">
-        <a href="/products"><img id="footer-logo" src="{{ 'hevy-main.svg' | theme_image_url }}"/></a>
+        <a href="/products"><img id="footer-logo" src="{{assets_host}}/images/hevy-main.svg"/></a>
     </div>
 </div>

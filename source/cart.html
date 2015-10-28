@@ -1,3 +1,9 @@
+{% assign url_array = page.full_url | split: '/' %}
+{% if url_array[2] contains 'localhost' %}
+    {% assign assets_host = url_array[2] | prepend: '//' | prepend: url_array[0] | append: '/' %}
+{% else %}
+    {% assign assets_host = 'http://assets.hevy.la/' %}
+{% endif %}
 <div class="container-fluid content-with-footer">
     <h1 class="title">CART</h1>
 
@@ -50,6 +56,6 @@
 
 <div id="footer">
     <div id="footer-bar">
-        <a href="/products"><img id="footer-logo" src="{{ 'hevy-main.svg' | theme_image_url }}"/></a>
+        <a href="/products"><img id="footer-logo" src="{{assets_host}}/images/hevy-main.svg"/></a>
     </div>
 </div>
