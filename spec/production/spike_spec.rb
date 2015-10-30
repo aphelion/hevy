@@ -1,7 +1,7 @@
 describe 'Spike Production Test', type: :feature do
   before :each do
     visit '/'
-    if page.has_content? 'We’re working on our site at the moment.'
+    if page.has_content? "We're working on our site at the moment."
       fail 'website is in maintenance mode'
     end
   end
