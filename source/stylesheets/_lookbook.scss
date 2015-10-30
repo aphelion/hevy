@@ -23,10 +23,20 @@
 
   #lookbook {
     display: none;
-    [data-background-image-url] {
-      width: 100%;
+    div {
       height: 100%;
     }
+    > div {
+      width: 100%;
+    }
+
+    .portrait { display: inherit; }
+    .landscape { display: none; }
+    @media (min-aspect-ratio: 10/9) {
+      .portrait { display: none; }
+      .landscape { display: inherit; }
+    }
+
     .preload {
       display: none;
       img {

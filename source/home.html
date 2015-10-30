@@ -9,18 +9,90 @@
         <i class="icon-barbell icon-spin"></i>
     </div>
     <div id="lookbook">
-        {% if theme.image_sets.slideshow_images.size > 0 %}
         <ul class="slides-container">
-            {% for image in theme.image_sets.slideshow_images %}
-            <li><div data-background-image-url="{{ image.url }}"/></li>
-            {% endfor %}
+            <li>
+                <div class="portrait" data-background-image-url="{{assets_host}}images/lookbook/DSC_6621.jpg"></div>
+                <div class="landscape">
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6621.jpg"></div>
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6621.jpg"></div>
+                </div>
+            </li>
+            <li>
+                <div class="portrait" data-background-image-url="{{assets_host}}images/lookbook/DSC_6857.jpg"></div>
+                <div class="landscape">
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6857.jpg"></div>
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6857.jpg"></div>
+                </div>
+            </li>
+            <li>
+                <div class="portrait" data-background-image-url="{{assets_host}}images/lookbook/DSC_6997.jpg"></div>
+                <div class="landscape">
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6997.jpg"></div>
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6997.jpg"></div>
+                </div>
+            </li>
+            <li>
+                <div class="portrait" data-background-image-url="{{assets_host}}images/lookbook/DSC_6951.jpg"></div>
+                <div class="landscape">
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6951.jpg"></div>
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6951.jpg"></div>
+                </div>
+            </li>
+            <li>
+                <div class="portrait" data-background-image-url="{{assets_host}}images/lookbook/DSC_6618.jpg"></div>
+                <div class="landscape">
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6618.jpg"></div>
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6618.jpg"></div>
+                </div>
+            </li>
+            <li>
+                <div class="portrait" data-background-image-url="{{assets_host}}images/lookbook/DSC_6970.jpg"></div>
+                <div class="landscape">
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6970.jpg"></div>
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6970.jpg"></div>
+                </div>
+            </li>
+            <li>
+                <div class="portrait" data-background-image-url="{{assets_host}}images/lookbook/DSC_7096.jpg"></div>
+                <div class="landscape">
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_7096.jpg"></div>
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_7096.jpg"></div>
+                </div>
+            </li>
+            <li>
+                <div class="portrait" data-background-image-url="{{assets_host}}images/lookbook/DSC_6711.jpg"></div>
+                <div class="landscape">
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6711.jpg"></div>
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_6711.jpg"></div>
+                </div>
+            </li>
+            <li>
+                <div class="portrait" data-background-image-url="{{assets_host}}images/lookbook/DSC_7146.jpg"></div>
+                <div class="landscape">
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_7146.jpg"></div>
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_7146.jpg"></div>
+                </div>
+            </li>
+            <li>
+                <div class="portrait" data-background-image-url="{{assets_host}}images/lookbook/DSC_7218.jpg"></div>
+                <div class="landscape">
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_7218.jpg"></div>
+                    <div class="col-xs-6" data-background-image-url="{{assets_host}}images/lookbook/DSC_7218.jpg"></div>
+                </div>
+            </li>
         </ul>
         <div class="preload">
-            {% for image in theme.image_sets.slideshow_images %}
-            <img src="{{ image.url }}"/>
-            {% endfor %}
+            <img src="{{assets_host}}images/lookbook/DSC_6621.jpg"/>
+            <img src="{{assets_host}}images/lookbook/DSC_6857.jpg"/>
+            <img src="{{assets_host}}images/lookbook/DSC_6997.jpg"/>
+            <img src="{{assets_host}}images/lookbook/DSC_6951.jpg"/>
+            <img src="{{assets_host}}images/lookbook/DSC_6618.jpg"/>
+            <img src="{{assets_host}}images/lookbook/DSC_6970.jpg"/>
+            <img src="{{assets_host}}images/lookbook/DSC_7096.jpg"/>
+            <img src="{{assets_host}}images/lookbook/DSC_6711.jpg"/>
+            <img src="{{assets_host}}images/lookbook/DSC_7146.jpg"/>
+            <img src="{{assets_host}}images/lookbook/DSC_7218.jpg"/>
         </div>
-        {% endif %}
     </div>
 </div>
 

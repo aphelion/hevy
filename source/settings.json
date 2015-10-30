@@ -17,20 +17,7 @@
     {
       "variable": "slideshow_images",
       "label": "Slideshow",
-      "description": "This is a slideshow",
-      "defaults": [
-        "sample-lookbook/bud-and-dick-4999.jpg",
-        "sample-lookbook/bathing-beauty-parade-18747.jpg",
-        "sample-lookbook/woodberry-gymnasts-6784.jpg",
-        "sample-lookbook/radio-days-6682.jpg",
-        "sample-lookbook/cu-hoops-9262.jpg",
-        "sample-lookbook/volley-of-the-dolls-19294.jpg",
-        "sample-lookbook/boys-gym-8770.jpg",
-        "sample-lookbook/beach-policeman-1070.jpg",
-        "sample-lookbook/round-two-10117.jpg",
-        "sample-lookbook/tap-972.jpg",
-        "sample-lookbook/sportin-life-8052.jpg"
-      ]
+      "description": "This is a slideshow"
     },
     {
       "variable": "lookbook_images",
