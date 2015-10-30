@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     function setManualMode(lookbook) {
         lookbook.superslides('stop');
-        lookbook.data('superslides').animation = lookbook.data('superslides').fx['slide'];
+        //lookbook.data('superslides').animation = lookbook.data('superslides').fx['slide'];
     }
 
     if(lookbook.length) {
