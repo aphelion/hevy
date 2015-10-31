@@ -1,8 +1,7 @@
 <div class="container-fluid content">
     <h1 class="title">PRODUCTS</h1>
-    {% get products from products.all %}
     <div class="row products-grid">
-        {% for product in products %}
+        {% for product in products.all %}
         <div class="col-md-4 col-sm-6">
             <a class="product" href="{{ product.url }}">
                 <div class="product-images">
@@ -33,5 +32,4 @@
         </div>
         {% endfor %}
     </div>
-    {% endget %}
 </div>
