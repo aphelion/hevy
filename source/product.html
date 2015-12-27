@@ -30,10 +30,6 @@
             {% if product.description != blank %}
             {{ product.description | paragraphs }}
             {% endif %}
-            <div class="text-hevy-burgundy">
-                <p>PRE-SALE AVAILABLE NOW.</p>
-                <p>All orders ship by December 1st, 2015.</p>
-            </div>
 
             {% if product.status == 'active' %}
             <form method="post" action="/cart" class="form-multi-inline">
