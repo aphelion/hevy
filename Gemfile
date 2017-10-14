@@ -9,4 +9,4 @@ group :development, :test do
   gem 'capybara-screenshot'
 end
 
-gem 'dugway', :git => 'git://github.com/aphelion/dugway.git'
+gem 'dugway', :git => 'git://github.com/bigcartel/dugway.git'
