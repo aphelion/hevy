@@ -32,10 +32,10 @@ describe 'Site Navigation', type: :feature do
     end
   end
 
-  describe 'the ABOUT link' do
-    it 'takes the customer to the about page' do
-      click_link('ABOUT')
-      expect(@content).to have_content 'ABOUT'
+  describe 'the MOTIVATION link' do
+    it 'takes the customer to the motivation page' do
+      click_link('MOTIVATION')
+      expect(@content).to have_content 'MOTIVATION'
       expect(@content).not_to have_content 'HOME'
     end
   end

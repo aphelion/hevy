@@ -5,30 +5,32 @@
 @import "../vendor/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/variables";
 @import "compass";
 
-@mixin contact-page-panel($url) {
-  padding: 4rem 2rem 2rem 2rem;
-  @include background-image(linear-gradient(top, rgba(white, 0) 0, rgba(white, 0.5) 3rem, rgba(white, 1) 100%), url($url));
-  @include background-size(cover);
-  background-position: center center;
-
-  @media (min-width: $screen-sm-min) {
-    padding: 20vh 4rem 2rem 4rem;
-    @include background-image(linear-gradient(top, rgba(white, 0) 5vh, rgba(white, 0.9) 40vh, rgba(white, 1) 100%), url($url));
-    @include background-size(cover);
-    background-position: center center;
-    @include calc(min-height, "100vh - #{$navbar-height} - 1px - #{$footer-height}");
-  }
-}
-
 #contact-page {
-  color: $hevy-black;
-  background-color: white;
-}
+  color: white;
+  background-color: #3c3733;
+  @include filter-gradient(#3c3733, #6b6662, vertical);
+  @include background-image(linear-gradient(top, #3c3733 0%,#6b6662 100%));
 
-#about {
-  @include contact-page-panel('images/DSC_7460.jpg');
-}
+  #motivation {
+    font-size: 2rem;
+    padding: 2rem 2rem 6rem 2rem;
+    column-count: 2;
+    column-gap: 4rem;
 
-#contact {
-  @include contact-page-panel('images/DSC_7775.jpg');
+    p {
+      text-indent: 4rem;
+    }
+  }
+
+  .motivation-title {
+    margin-top: 0;
+    position: relative;
+    display: inline-block;
+    padding-bottom: ($line-height-computed / 4);
+  }
+
+  .vertical-spacing {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
 }
