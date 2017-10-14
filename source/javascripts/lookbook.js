@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    var spinnerFadeOutTime = 500;
-    var minSpinnerTime = 1500;
+    var loaderFadeOutTime = 500;
+    var minLoaderTime = 2500;
     var lookbookFadeInTime = 1000;
 
     var start = new Date();
@@ -17,14 +17,14 @@ $(document).ready(function () {
             var timeInMilliseconds = end - start;
 
             function startSlideshow() {
-                $('#lookbook-spinner').fadeOut(spinnerFadeOutTime, function () {
+                $('#lookbook-loader').fadeOut(loaderFadeOutTime, function () {
                     $(this).remove();
                     lookbook.fadeIn(lookbookFadeInTime);
                 });
             }
 
-            if (timeInMilliseconds  < minSpinnerTime) {
-                setTimeout(function() { startSlideshow(); }, minSpinnerTime - timeInMilliseconds);
+            if (timeInMilliseconds  < minLoaderTime) {
+                setTimeout(function() { startSlideshow(); }, minLoaderTime - timeInMilliseconds);
             } else {
                 startSlideshow();
             }

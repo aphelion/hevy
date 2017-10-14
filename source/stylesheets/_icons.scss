@@ -6,6 +6,7 @@
   font-family: "icons";
   src: url("/fonts/icons/icons.eot");
   src: url("/fonts/icons/icons.eot?#iefix") format("embedded-opentype"),
+       url("/fonts/icons/icons.woff2") format("woff2"),
        url("/fonts/icons/icons.woff") format("woff"),
        url("/fonts/icons/icons.ttf") format("truetype"),
        url("/fonts/icons/icons.svg#icons") format("svg");
@@ -23,7 +24,7 @@
 [data-icon]:before { content: attr(data-icon); }
 
 [data-icon]:before,
-.icon-barbell:before,
+.icon-hevy-h:before,
 .icon-hex:before,
 .icon-hex-aphelion:before,
 .icon-hex-facebook:before,
@@ -42,14 +43,14 @@
   font-smoothing: antialiased;
 }
 
-.icon-barbell:before { content: "\f102"; }
-.icon-hex:before { content: "\f107"; }
-.icon-hex-aphelion:before { content: "\f106"; }
+.icon-hevy-h:before { content: "\f101"; }
+.icon-hex:before { content: "\f102"; }
+.icon-hex-aphelion:before { content: "\f103"; }
 .icon-hex-facebook:before { content: "\f104"; }
 .icon-hex-instagram:before { content: "\f105"; }
 
-$font-icons-barbell: "\f102";
-$font-icons-hex: "\f107";
-$font-icons-hex-aphelion: "\f106";
+$font-icons-hevy-h: "\f101";
+$font-icons-hex: "\f102";
+$font-icons-hex-aphelion: "\f103";
 $font-icons-hex-facebook: "\f104";
 $font-icons-hex-instagram: "\f105";
