@@ -45,12 +45,7 @@
                 <li{% if page.url == '/' %} class="active"{% endif %}><a href="/">HOME</a></li>
                 <li{% if page.url == '/products' %} class="active"{% endif %}><a href="/products">PRODUCTS</a></li>
                 <li{% if page.url == '/contact' %} class="active"{% endif %}><a href="/contact">MOTIVATION</a></li>
-                <li{% if page.url == '/cart' %} class="active"{% endif %}><a href="/cart">
-                    <div>
-                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                        <span>CART: {{ cart.item_count }}</span>
-                    </div>
-                </a></li>
+                <li{% if page.url == '/cart' %} class="active"{% endif %}><a href="/cart">CART: {{ cart.item_count }}</a></li>
             </ul>
         </div>
     </div>
