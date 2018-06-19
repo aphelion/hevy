@@ -17,6 +17,10 @@
     column-count: 2;
     column-gap: 4rem;
 
+    @media (max-width: $screen-xs-max) {
+      column-count: 1;
+    }
+
     p {
       text-indent: 4rem;
     }
